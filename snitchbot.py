@@ -7,6 +7,7 @@ import sqlite3
 import sre_constants
 import os
 import time
+import pathlib
 
 from twisted.internet import protocol, reactor, task, ssl
 from twisted.python import log
@@ -391,7 +392,7 @@ class SnatchAndSnitch(protocol.ReconnectingClientFactory):
 
 
 def main():
-    log.startLogging(open(os.chdir(os.path.dirname(__file__)) + '/snitch.log'))
+    log.startLogging(open(pathlib.Path.cwd() / "snitch.log"))
     snatch = SnatchAndSnitch()
     snatch.protocol = Snatch
     snitch = SnatchAndSnitch()
