@@ -392,7 +392,7 @@ class SnatchAndSnitch(protocol.ReconnectingClientFactory):
 
 
 def main():
-    log.startLogging(open(pathlib.Path.cwd() / "snitch.log"))
+    log.startLogging(open(pathlib.Path.cwd() / "snitch.log", 'w'))
     snatch = SnatchAndSnitch()
     snatch.protocol = Snatch
     snitch = SnatchAndSnitch()
