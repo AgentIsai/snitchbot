@@ -78,9 +78,9 @@ class EternalClient(irc.IRCClient):
             % (self.nickname, params[1]))
 
 class Snatch(EternalClient):
-    realname = 'Recent Changes'
-    nickname = 'StreamBot-read'
-    password = ':MirahezeBot %s' % (settings.nickserv_password)
+    realname = 'Win8'
+    nickname = 'Win8'
+    password = ':WinRT %s' % (settings.nickserv_password)
 
     def connectionMade(self):
         EternalClient.connectionMade(self)
@@ -287,7 +287,7 @@ class Snitch(EternalClient):
         elif action == 'unignore':
             self.updateRules(channel, params, ignore=True, remove=True)
         elif action == 'info':
-            self.msg(channel, 'I am running StreamBot version Alpha. To see my commands say !help')
+            self.msg(channel, 'I am running Snitchbot. To see my commands say !help')
         elif action == 'list':
             self.cursor.execute(
                 'SELECT * FROM rules WHERE channel=?', (channel,))
